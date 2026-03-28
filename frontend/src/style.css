@@ -1,0 +1,297 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+  transition: 0.3s;
+}
+
+.main {
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+/* HEADER RIGHT */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* CART HEADER */
+.cartHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cartHeader:hover {
+  transform: scale(1.08);
+}
+
+.count {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.total {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* ADD BUTTON */
+.addBtn {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.addBtn:hover {
+  transform: scale(1.08);
+}
+
+/* PRODUCT GRID (4 ITEMS) */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ 4 per row */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background: #f9f9f9;
+}
+
+/* CARD BODY */
+.cardBody {
+  padding: 14px;
+}
+
+.desc {
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0;
+  min-height: 30px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.15);
+}
+
+/* BUTTON COLORS */
+.cartBtn {
+  background: #27ae60;
+  color: white;
+}
+
+.editBtn {
+  background: #3498db;
+  color: white;
+}
+
+.deleteBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+/* MODAL BACKGROUND */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+/* MODAL BOX */
+.modalBox {
+  background: white;
+  width: 340px;
+  padding: 20px;
+  margin: 100px auto;
+  border-radius: 18px;
+  box-shadow: 0px 12px 35px rgba(0,0,0,0.2);
+  animation: popup 0.3s ease;
+}
+
+/* POPUP ANIMATION */
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* INPUTS */
+.modalBox input,
+.modalBox textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+}
+
+.modalBox input:focus,
+.modalBox textarea:focus {
+  border-color: #27ae60;
+  outline: none;
+}
+
+/* IMAGE PREVIEW */
+.preview {
+  width: 80px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* MODAL ACTIONS */
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* CART POPUP */
+.cartRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+/* QUANTITY CONTROL */
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty button {
+  padding: 6px 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.qty button:hover {
+  background: #bbb;
+}
+
+/* REMOVE BUTTON */
+.removeBtn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CHECKOUT BUTTON */
+.checkoutBtn {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.checkoutBtn:hover {
+  transform: scale(1.07);
+}

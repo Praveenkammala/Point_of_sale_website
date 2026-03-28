@@ -1,0 +1,16 @@
+.cart {
+  background: green;
+  color: white;
+  margin-right: 5px;
+}
+
+.cartBox {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.cartItem {
+  padding: 5px 0;
+}
